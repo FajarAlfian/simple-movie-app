@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import Search from './components/Search'
 import Loading from './components/Loading'
+import MovieCard from './components/MovieCard'
 
 const API_BASE_URL = 'https://api.themoviedb.org/3'
 
@@ -71,7 +72,7 @@ return (
       ) : (
         <ul>
           {movies.map(movie => (
-            <li className='text-white' key={movie.id}>{movie.title}</li>
+            <MovieCard key={movie.id} movie={movie} />
           ))}
         </ul>
       )}
