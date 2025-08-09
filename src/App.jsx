@@ -26,7 +26,7 @@ const App = () => {
 
   useDebounce(() => {
     setDebouncedSearchTerm(searchTerm);
-  }, 5000, [searchTerm]);
+  }, 500, [searchTerm]); 
 
   const fetchMovies = async (query = '') => {
     setLoading(true);
@@ -57,8 +57,8 @@ const App = () => {
   };
 
   useEffect(() => {
-    fetchMovies(searchTerm);
-  }, [searchTerm]);
+    fetchMovies(debouncedSearchTerm);
+  }, [debouncedSearchTerm]); 
 
 return (
   <main>
